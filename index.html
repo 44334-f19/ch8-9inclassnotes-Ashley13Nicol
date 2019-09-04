@@ -1,13 +1,141 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>LASTNAME Chapter8-9InClassNotes</title> 
+		<title>Williams Chapter8-9InClassNotes</title> 
 		<meta charset="utf-8"> 
 		<style>
-		
+            table {margin: auto;
+                    border: 5px solid #000;
+                border-spacing: 0px;}
+                td, th{padding: 0.5 em;}
+            caption {font-size: 1.2em}
+            #wrapper {display: flex;
+                        flex-direction: row;}
+            form {background-color: #eaeaea;
+                    font-family: arial, sans-serif;
+                    padding: 10px;
+                    min-width: 400px;}
+            fieldset {border: 2px ridge #000;
+                        padding: 10px;}
+            label {float: left;
+                    width: auto;
+                    text-align: right;
+                    padding-right: 10px;
+                    clear: left;
+                    margin-top: 10px;}
+            input, textarea {margin-top: 10px;
+                            display: block;}
+            #stupers {flex: 2;}
+            #stuInFoCol1 {flex: 2;}
+            #stuInFoCol2 {flex: 3;}
+            #stuRating {flex: 2;}
+            input [type="radio"], input [type= "checkbox"] {display: inline;}
 		</style>
 	</head> 
 <body> 
-
+    <h1>Student Informatin Table</h1>
+    <table>
+        <caption>Course Schedule</caption>
+        <thead>
+            <tr>
+                <th id= "time"> Time</th>
+                <th id= "m">Monday</th>
+                <th id="t">Tuesday</th>
+                <th id= "w">Wednesday</th>
+                <th id="tr">Thrusday</th>
+                <th id="f">Friday</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id= "time">8:00-9:15am </td>
+                <td id= "m"></td>
+                <td id="t">Chemistry</td>
+                <td id= "w"></td>
+                <td id="tr">Cemistry</td>
+                <td id="f"></td>
+            </tr>
+        <tr>
+                <td id= "time"> 9:00-9:50am</td>
+                <td id= "m">Web Dev II</td>
+                <td id="t"></td>
+                <td id= "w">Web Dev II</td>
+                <td id="tr"></td>
+                <td id="f">Web Dev II</td>
+            </tr>
+              <tr>
+                <td id= "time"> 11:00-11:50am</td>
+                <td id= "m">Graphic Design</td>
+                <td id="t"></td>
+                <td id= "w">Graphic Design</td>
+                <td id="tr"></td>
+                <td id="f">Graphic Design</td>
+            </tr>
+        </tbody>
+    
+    </table>
+    <h1>Student Information Form</h1>
+    <p>Required Fields Marked with an asterisk *</p>
+    <form method="post" action = "http://webdevbasics.net/scripts/demo.php">
+        <div id= "wrapper">
+        <fieldset id= "stuPers">
+            <label for ="myname">*Name:</label>
+            <input type = "text" name = "myname" id= "myName" required= "required" placeholder= "your first and last name">
+            
+            <label for ="myaddress">*Address</label>
+            <input type = "text" name = "myaddress" id= "myAddress" required= "required" placeholder= "your Address">
+            
+            <label for ="myEmail">*Email:</label>
+            <input type = "text" name = "myEmail" id= "myEmal" required= "required" placeholder= "your email">
+            
+            <label for ="myUsername">*Username:</label>
+            <input type = "text" name = "myUsername" id= "myUsername" required= "required" placeholder= "your Username">
+                
+            <label for ="mypassword">*Password:</label>
+            <input type = "text" name = "mypassword" id= "myPassword" required= "required" placeholder= "your Password">     
+            </fieldset>
+        <fieldset id= "stuInFoCol1">
+            <legend> Student Information</legend>
+            Select Status:<br> 
+            <input type = "radio" name="myStatus" id="GS" value="Graduate Student">Graduate Student<br>
+            <input type = "radio" name="myStatus" id="S" value="Senior">Senior<br>
+            <input type = "radio" name="myStatus" id="J" value="Jounior">Jounior<br>
+            <input type = "radio" name="myStatus" id="S" value="Sohpomore">Sophomore<br>
+            <input type = "radio" name="myStatus" id="F" value="Freshman">Freshman<br><br> 
+            
+            Select Orgnamizations: <br> 
+            <input type = "checkbox" name="myOrg" id="acm" value="ACM">ACM<br>
+            <input type = "checkbox" name="myOrg" id="adink" value="adink">adink<br>
+            <input type = "checkbox" name="myOrg" id="s" value="sorority">sorority<br>
+            <input type = "checkbox" name="myOrg" id="f" value="fraternity">fraternity<br>
+            <input type = "checkbox" name="myOrg" id="o" value="other">other<br>
+                   
+            </fieldset>
+        <fieldset id= "stuInFoCol2">
+            <legend>Campus</legend>    
+           <label> Do you live on campus: </label> 
+            <select size="1" name="campus" id="campus">
+            <option value="Yes">Yes</option>
+            <option value = "no">No</option>
+            </select>
+            <label for = "moveInDate">Choose a move in date</label>
+            <input type="date" name="moveInDate" id="myDate">
+            </fieldset>
+                
+        <fieldset id= "stuRating">
+            <legend>Studen Ratings/Comments</legend>
+            <label for="myRating">How would you rate NW: (1(bad) - 10(good)):</label>
+            <input type="range" name="myRating" id="myRating" min="1" max="10"> 
+            
+            <label for="myComments">*Comments </label>
+            <textarea name="mComments" id="myComments" rows="2" cols="20" required= "required"></textarea>
+            
+            <input id="mySubmit" type="submit" value="Submit">
+                
+        </fieldset>
+                
+        </div>
+    </form>
 </body> 
 </html> 
